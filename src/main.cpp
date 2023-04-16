@@ -20,5 +20,5 @@ int main()
 
     Linkedlist->removeFromHead();
     Linkedlist->traverse();
-    cout<<Linkedlist->search(5);
+    cout << Linkedlist->search(5);
 }
