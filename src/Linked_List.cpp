@@ -68,18 +68,20 @@ void Linked_List::traverse(char separator)
     }
 }
 
-void Linked_List::removeFromHead()
+int Linked_List::removeFromHead()
 {
     if (!isEmpty())
     {
         Node *nodeToDelete = new Node();
         nodeToDelete = HEAD;
+        int removed_data = nodeToDelete->info;
         HEAD = nodeToDelete->next;
         if (HEAD == NULL) // If the linked list is empty now
         {
             TAIL = NULL;
         }
         delete nodeToDelete;
+        return removed_data;
     }
     else
     {
@@ -87,12 +89,13 @@ void Linked_List::removeFromHead()
     }
 }
 
-void Linked_List::removeFromTail()
+int Linked_List::removeFromTail()
 {
     if (!isEmpty())
     {
         Node *nodeToDelete = new Node();
         nodeToDelete = TAIL;
+        int removed_data = nodeToDelete->info;
         if (HEAD == TAIL)
         {
             HEAD = TAIL = NULL;
@@ -109,6 +112,7 @@ void Linked_List::removeFromTail()
             predecessor->next = NULL;
         }
         delete nodeToDelete;
+        return removed_data;
     }
     else
     {

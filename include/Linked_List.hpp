@@ -23,8 +23,8 @@ public:
     void addToHead(int data);
     void addToTail(int data);
     void add(int data, Node *predecessor);
-    void removeFromHead();
-    void removeFromTail();
+    int removeFromHead();
+    int removeFromTail();
     void remove(int data);
     bool search(int data);
     bool retrieve(int data, Node *dataOutPtr);
