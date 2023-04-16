@@ -167,3 +167,21 @@ bool Linked_List::retrieve(int data, Node *dataOutPtr)
         return true;
     }
 }
+
+bool Linked_List::search(int data)
+{
+    Node *P = new Node();
+    P = HEAD;
+    while (P != NULL && P->info != data)
+    {
+        P = P->next;
+    }
+    if (P == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
