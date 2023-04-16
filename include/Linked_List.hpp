@@ -6,6 +6,8 @@ class Node
 public:
     int info;
     Node *next;
+    Node() : next(nullptr) {}
+    Node(int info, Node *next) : info(info), next(next) {}
 };
 
 class Linked_List
@@ -26,7 +28,7 @@ public:
     void remove(int data);
     bool search(int data);
     bool retrieve(int data, Node *dataOutPtr);
-    void traverse();
+    void traverse(char separator = ' ');
 };
 
 #endif

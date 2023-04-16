@@ -49,16 +49,23 @@ void Linked_List::add(int data, Node *predecessor)
     predecessor->next = newNode;
 }
 
-void Linked_List::traverse()
+void Linked_List::traverse(char separator)
 {
-    Node *P = new Node();
-    P = HEAD;
-    while (P != NULL)
+    if (isEmpty())
     {
-        cout << P->info;
-        P = P->next;
+        cout << "The linked list is empty." << endl;
     }
-    cout << endl;
+    else
+    {
+        Node *P = new Node();
+        P = HEAD;
+        while (P != NULL)
+        {
+            cout << P->info << separator;
+            P = P->next;
+        }
+        cout << endl;
+    }
 }
 
 void Linked_List::removeFromHead()
@@ -147,41 +154,59 @@ void Linked_List::remove(int data)
             }
         }
     }
+    else
+    {
+        cout << "Linked list is empty." << endl;
+    }
 }
 
 bool Linked_List::retrieve(int data, Node *dataOutPtr)
 {
-    Node *P = new Node();
-    P = HEAD;
-    while (P != NULL && P->info != data)
+    if (isEmpty())
     {
-        P = P->next;
-    }
-    if (P == NULL)
-    {
-        return false;
+        cout << "The linked list is empty." << endl;
     }
     else
     {
-        dataOutPtr = P;
-        return true;
+        Node *P = new Node();
+        P = HEAD;
+        while (P != NULL && P->info != data)
+        {
+            P = P->next;
+        }
+        if (P == NULL)
+        {
+            return false;
+        }
+        else
+        {
+            dataOutPtr = P;
+            return true;
+        }
     }
 }
 
 bool Linked_List::search(int data)
 {
-    Node *P = new Node();
-    P = HEAD;
-    while (P != NULL && P->info != data)
+    if (isEmpty())
     {
-        P = P->next;
-    }
-    if (P == NULL)
-    {
-        return false;
+        cout << "The Linked list is empty." << endl;
     }
     else
     {
-        return true;
+        Node *P = new Node();
+        P = HEAD;
+        while (P != NULL && P->info != data)
+        {
+            P = P->next;
+        }
+        if (P == NULL)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
