@@ -75,11 +75,11 @@ void Linked_List::removeFromHead()
         Node *nodeToDelete = new Node();
         nodeToDelete = HEAD;
         HEAD = nodeToDelete->next;
-        delete nodeToDelete;
         if (HEAD == NULL) // If the linked list is empty now
         {
             TAIL = NULL;
         }
+        delete nodeToDelete;
     }
     else
     {
@@ -190,7 +190,7 @@ bool Linked_List::search(int data)
 {
     if (isEmpty())
     {
-        cout << "The Linked list is empty." << endl;
+        return false;
     }
     else
     {
