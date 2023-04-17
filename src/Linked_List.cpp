@@ -30,7 +30,7 @@ void Linked_List::addToHead(int data)
     }
 }
 
-void Linked_List ::addToTail(int data)
+void Linked_List::addToTail(int data)
 {
     Node *newNode = new Node();
     newNode->info = data;
