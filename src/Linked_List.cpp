@@ -2,11 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Linked_List::Linked_List() : HEAD(NULL), TAIL(NULL) {}
+Linked_List::Linked_List() : HEAD(nullptr), TAIL(nullptr) {}
 Linked_List::~Linked_List() {}
 bool Linked_List::isEmpty()
 {
-    if (HEAD == NULL)
+    if (HEAD == nullptr)
     {
         return true;
     }
@@ -22,7 +22,7 @@ void Linked_List::addToHead(int data)
     newNode->info = data;
     newNode->next = HEAD;
     HEAD = newNode;
-    if (TAIL == NULL) // When the added node is the only node in the linked list
+    if (TAIL == nullptr) // When the added node is the only node in the linked list
     {
         TAIL = HEAD;
     }
@@ -32,13 +32,16 @@ void Linked_List ::addToTail(int data)
 {
     Node *newNode = new Node();
     newNode->info = data;
-    newNode->next = NULL;
-    if (TAIL == NULL) // When the added node is the only node in the linked list
+    newNode->next = nullptr;
+    if (TAIL == nullptr) // When the added node is the only node in the linked list
     {
         HEAD = TAIL = newNode;
     }
-    TAIL->next = newNode;
-    TAIL = newNode;
+    else
+    {
+        TAIL->next = newNode;
+        TAIL = newNode;
+    }
 }
 
 void Linked_List::add(int data, Node *predecessor)
@@ -59,7 +62,7 @@ void Linked_List::traverse(char separator)
     {
         Node *P = new Node();
         P = HEAD;
-        while (P != NULL)
+        while (P != nullptr)
         {
             cout << P->info << separator;
             P = P->next;
@@ -76,9 +79,9 @@ int Linked_List::removeFromHead()
         nodeToDelete = HEAD;
         int removed_data = nodeToDelete->info;
         HEAD = nodeToDelete->next;
-        if (HEAD == NULL) // If the linked list is empty now
+        if (HEAD == nullptr) // If the linked list is empty now
         {
-            TAIL = NULL;
+            TAIL = nullptr;
         }
         delete nodeToDelete;
         return removed_data;
@@ -98,7 +101,7 @@ int Linked_List::removeFromTail()
         int removed_data = nodeToDelete->info;
         if (HEAD == TAIL)
         {
-            HEAD = TAIL = NULL;
+            HEAD = TAIL = nullptr;
         }
         else
         {
@@ -109,7 +112,7 @@ int Linked_List::removeFromTail()
                 predecessor = predecessor->next;
             }
             TAIL = predecessor;
-            predecessor->next = NULL;
+            predecessor->next = nullptr;
         }
         delete nodeToDelete;
         return removed_data;
@@ -134,7 +137,7 @@ void Linked_List::remove(int data)
             temp = HEAD->next;
             Node *prev = new Node();
             prev = HEAD;
-            while (temp != NULL)
+            while (temp != nullptr)
             {
                 if (temp->info == data)
                 {
@@ -146,11 +149,11 @@ void Linked_List::remove(int data)
                     temp = temp->next;
                 }
             }
-            if (temp != NULL)
+            if (temp != nullptr)
             {
                 prev->next = temp->next;
                 delete temp;
-                if (prev->next == NULL)
+                if (prev->next == nullptr)
                 {
                     TAIL = prev;
                     delete prev;
@@ -174,11 +177,11 @@ bool Linked_List::retrieve(int data, Node *dataOutPtr)
     {
         Node *P = new Node();
         P = HEAD;
-        while (P != NULL && P->info != data)
+        while (P != nullptr && P->info != data)
         {
             P = P->next;
         }
-        if (P == NULL)
+        if (P == nullptr)
         {
             return false;
         }
@@ -200,11 +203,11 @@ bool Linked_List::search(int data)
     {
         Node *P = new Node();
         P = HEAD;
-        while (P != NULL && P->info != data)
+        while (P != nullptr && P->info != data)
         {
             P = P->next;
         }
-        if (P == NULL)
+        if (P == nullptr)
         {
             return false;
         }
