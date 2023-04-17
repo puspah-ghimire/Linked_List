@@ -90,7 +90,7 @@ int Linked_List::removeFromHead()
     }
     else
     {
-        cout << "Linked list is empty." << endl;
+        cout << "The linked list is empty." << endl;
     }
 }
 
@@ -121,7 +121,7 @@ int Linked_List::removeFromTail()
     }
     else
     {
-        cout << "The linked list is empty" << endl;
+        cout << "The linked list is empty." << endl;
     }
 }
 
@@ -165,7 +165,7 @@ void Linked_List::remove(int data)
     }
     else
     {
-        cout << "Linked list is empty." << endl;
+        cout << "The linked list is empty." << endl;
     }
 }
 
