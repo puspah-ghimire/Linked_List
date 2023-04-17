@@ -3,7 +3,9 @@
 using namespace std;
 
 Linked_List::Linked_List() : HEAD(nullptr), TAIL(nullptr) {}
+
 Linked_List::~Linked_List() {}
+
 bool Linked_List::isEmpty()
 {
     if (HEAD == nullptr)
