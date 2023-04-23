@@ -64,6 +64,7 @@ void Linked_List::traverse(char separator)
     {
         Node *P = new Node();
         P = HEAD;
+        cout << "The elements are: " << endl;
         while (P != nullptr)
         {
             cout << P->info << separator;
